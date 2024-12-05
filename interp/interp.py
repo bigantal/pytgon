@@ -36,18 +36,22 @@ class Ev:
             else:
                 rhs = stack.pop()
                 lhs = stack.pop()
+                res = 0
                 if tok == "+":
-                    stack.append(lhs+rhs)
+                    res = lhs+rhs
                 elif tok == "*":
-                    stack.append(lhs*rhs)
+                    res = lhs*rhs
                 elif tok == "-":
-                    stack.append(lhs-rhs)
+                    res = lhs-rhs
                 elif tok == ">=":
                     if lhs >= rhs:
-                        stack.append(1)
+                        res = 1
                     else:
-                        stack.append(0)
-        return stack[0]
+                        res = 0
+                print("operator: "+tok + " lhs: "+str(lhs) +
+                      " rhs: "+str(rhs)+" result: "+str(res))
+                stack.append(res)
+        return stack.pop()
 
 
 Ev().ev(open(sys.argv[1]).read())
