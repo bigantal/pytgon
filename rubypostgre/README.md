@@ -5,12 +5,6 @@ application up and running.
 
 Things you may want to cover:
 
-* Run
-
-```
-rails s
-```
-
 * Ruby version
 
 * System dependencies
